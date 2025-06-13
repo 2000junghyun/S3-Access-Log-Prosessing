@@ -1,21 +1,21 @@
-# Convert extension and merge log files
+# S3 Access Log Merger & CSV Converter
 
-## 문제점
+## Problem
 
-- S3 access log 파일은 한 종류의 시간 간격으로 새로운 로그 파일 생성됨
-- 사용자가 원하는 시간에 맞춰 동적인 파일 병합 필요
-- 각 파일은 .txt 파일로 가독성이 좋지 않아 csv 파일로 변경 필요
+- S3 access log files are generated at fixed intervals that may not align with user needs.
+- Users often require dynamic merging of logs based on custom time ranges.
+- Each file is in `.txt` format, which is not ideal for readability or data processing.
+- Conversion to `.csv` is necessary for better usability.
 
-## 해결 과정
+## Solution
 
-- 아래 코드에서는 날짜 폴더 내의 로그 파일들을 모두 병합
-    - 날짜별 로그 확인 가능
-    - 원하는 시간 간격으로 추후 수정 가능
-- cvs 파일로 변경
-    - 디폴트는 .txt 파일 → 확장자가 없는 경우 .txt 붙임
-    - 개별 .txt 파일 내용을 통합 cvs 파일에 입력
+- The script merges all log files within a date-specific folder.
+- Logs can be reviewed by date, and the merging logic can be easily adjusted for different time intervals.
+- Files are converted from `.txt` to `.csv` format.
+- If a file has no extension, `.txt` is added by default.
+- The contents of individual `.txt` files are consolidated into a single `.csv` output file.
 
-## 기대 효과
+## Expected Benefits
 
-- 좁은 간격으로 나눠진 로그 파일을 원하는 시간 간격으로 병합 가능
-- .txt → .csv 파일: 변경하여 가독성 및 생산성 향상
+- Log files split into narrow time intervals can be merged based on custom time ranges.
+- Converting `.txt` to `.csv` improves readability and facilitates further processing.
