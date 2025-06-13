@@ -15,6 +15,14 @@
 - If a file has no extension, `.txt` is added by default.
 - The contents of individual `.txt` files are consolidated into a single `.csv` output file.
 
+## Results
+### Before
+
+
+### After
+<img width="1470" alt="result" src="https://github.com/user-attachments/assets/4996bd42-9618-49f0-8689-3565f159d117" />
+
+
 ## Expected Benefits
 
 - Log files split into narrow time intervals can be merged based on custom time ranges.
